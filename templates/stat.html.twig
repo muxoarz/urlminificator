@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Статистика по кликам:</h3>
+
+<table class="table">
+ <thead>
+ <tr>
+  <th scope="col">#</th>
+  <th scope="col">Время</th>
+  <th scope="col">IP</th>
+  <th scope="col">Страна</th>
+  <th scope="col">Реферер</th>
+  <th scope="col">Агент</th>
+ </tr>
+ </thead>
+ <tbody>
+    {% for click in clicks %}
+     <tr>
+      <th scope="row">{{ click.id }}</th>
+      <td>{{ click.createdAt|date }}</td>
+      <td>{{ click.getIpStr() }}</td>
+      <td>{{ click.getCountryCode() }}</td>
+      <td>{{ click.referer }}</td>
+      <td>{{ click.useragent }}</td>
+     </tr>
+    {% endfor %}
+ </tbody>
+</table>
+{% endblock %}

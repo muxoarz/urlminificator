@@ -1,0 +1,11 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+stat:
+    path: /stat/{urlId}
+    controller: App\Controller\LinkController::stat
+redir:
+    path: /{uid}
+    requirements:
+        uid: \w+
+    controller: App\Controller\LinkController::go

@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div>Ваша ссылка теперь выглядит так: <input value="{{ link }}" onclick="this.select()"></div>
+ <div><a href="{{ path('stat', {'urlId': id}) }}">Статистика по ссылке</a></div>
+{% endblock %}
